@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from "next/image";
 import Logo from '@/components/Logo';
 
 // Hero Section Component
@@ -23,7 +24,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-dark mb-6 leading-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-dark mb-6 leading-tight"
           >
             <span className="block">Streamline.</span>
             <span className="block text-primary">Automate.</span>
@@ -48,7 +49,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+            <Link href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4">
               Book a Free Call
             </Link>
             <Link href="/services" className="btn-secondary text-lg px-8 py-4">
@@ -65,18 +66,32 @@ const HeroSection = () => {
           >
             <p className="text-gray-500 mb-6">Trusted by digital businesses worldwide</p>
             <div className="flex justify-center items-center space-x-8 opacity-60">
-              {/* Placeholder client logos */}
-              <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">
-                <span className="text-gray-400 text-sm font-medium">Client 1</span>
-              </div>
-              <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">
-                <span className="text-gray-400 text-sm font-medium">Client 2</span>
-              </div>
-              <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">
-                <span className="text-gray-400 text-sm font-medium">Client 3</span>
-              </div>
-              <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">
-                <span className="text-gray-400 text-sm font-medium">Client 4</span>
+              <Image
+                src="https://hypefly.co.in/_next/image?url=%2Flogo.webp&w=640&q=75"
+                alt="Hype Fly India"
+                width={100}
+                height={40}
+              />
+              <Image
+                src="https://d3v0px0pttie1i.cloudfront.net/uploads/branding/logo/2f550f83-07e9-4874-b7e2-a438f430dba8/731b3853.jpeg"
+                alt="Veer Gidwani"
+                width={100}
+                height={40}
+              />
+              <Image
+                src="https://dashboard.getvantage.co/assets/img/newlogo-black.png"
+                alt="GetVantage"
+                width={150}
+                height={40}
+              />
+              <div className="flex items-center space-x-2">
+                <Image
+                  src="https://mumbairetinacenter.com/assets/Logo.png"
+                  alt="Mumbai Retina Center"
+                  width={40}
+                  height={40}
+                />
+                <span className="text-sm font-medium text-gray-600">Mumbai Retina Center</span>
               </div>
             </div>
           </motion.div>
@@ -292,7 +307,7 @@ const TestimonialsSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto space-x-8 pb-4">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -300,7 +315,7 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 p-8 rounded-2xl"
+              className="flex-shrink-0 w-80 bg-gray-50 p-8 rounded-2xl"
             >
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
@@ -349,7 +364,7 @@ const CTASection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <Link href="#" className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl">
+          <Link href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl">
             Book Your Free Call
           </Link>
         </motion.div>

@@ -2,7 +2,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import type { Metadata } from 'next';
 import Logo from '@/components/Logo';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description:
+    'Learn about the ZeroBusy mission, our values, and how we are dedicated to helping entrepreneurs win back their time through smart automation.',
+};
 
 const AboutPage = () => {
   return (
@@ -228,7 +235,7 @@ const AboutPage = () => {
             viewport={{ once: true }}
           >
             <a 
-              href="/contact" 
+              href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" 
               className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl inline-block"
             >
               Schedule a Free Consultation
