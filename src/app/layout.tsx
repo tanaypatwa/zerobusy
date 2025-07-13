@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   },
   description:
     'We build intelligent AI automations to help digital businesses save time, reduce costs, and scale operations. Stop the busy work, focus on growth.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
