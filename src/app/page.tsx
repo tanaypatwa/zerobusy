@@ -16,12 +16,12 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white pt-28 pb-20">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/10 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-accent/10 blur-3xl"></div>
+        <div className="absolute left-1/2 top-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-primary/5 to-accent/5 blur-3xl"></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -31,7 +31,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-dark mb-6 leading-tight"
+            className="text-4xl font-bold leading-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
           >
             <span className="block">Streamline.</span>
             <span className="block text-primary">Automate.</span>
@@ -43,9 +43,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="mx-auto mb-8 max-w-4xl px-4 text-xl leading-relaxed text-gray-600 sm:text-2xl md:text-3xl"
           >
-            We help digital businesses save time through intelligent AI automation. 
+            We help digital businesses save time through intelligent AI automation.
             Stop doing busy work and start focusing on what matters most.
           </motion.p>
 
@@ -54,12 +54,17 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <Link href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4">
+            <Link
+              href="https://calendar.app.google/uYHrdAiAqTZCC6qv9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary px-8 py-4 text-lg"
+            >
               Book a Free Call
             </Link>
-            <Link href="/services" className="btn-secondary text-lg px-8 py-4">
+            <Link href="/services" className="btn-secondary px-8 py-4 text-lg">
               View Services
             </Link>
           </motion.div>
@@ -190,7 +195,7 @@ const HowItWorksSection = () => {
       description: "We assess your current workflows and identify automation opportunities."
     },
     {
-      step: "02", 
+      step: "02",
       title: "Automate",
       description: "Our team builds and implements custom AI solutions tailored to your needs."
     },
