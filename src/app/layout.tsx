@@ -11,21 +11,12 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "ZeroBusy - AI Automation Agency | Streamline. Automate. Scale.",
-  description: "ZeroBusy helps digital businesses save time through intelligent AI automation. From workflow automation to AI agents, chatbots, and ecommerce management - we streamline your operations.",
-  keywords: "AI automation, workflow automation, AI agents, chatbots, ecommerce automation, business automation, digital automation",
-  authors: [{ name: "ZeroBusy" }],
-  openGraph: {
-    title: "ZeroBusy - AI Automation Agency",
-    description: "Streamline. Automate. Scale. We help digital businesses save time through intelligent AI automation.",
-    type: "website",
-    locale: "en_US",
+  title: {
+    template: '%s | ZeroBusy',
+    default: 'ZeroBusy | AI & Automation for Digital Businesses',
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ZeroBusy - AI Automation Agency",
-    description: "Streamline. Automate. Scale. We help digital businesses save time through intelligent AI automation.",
-  },
+  description:
+    'We build intelligent AI automations to help digital businesses save time, reduce costs, and scale operations. Stop the busy work, focus on growth.',
 };
 
 export default function RootLayout({

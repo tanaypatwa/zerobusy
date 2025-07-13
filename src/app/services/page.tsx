@@ -3,6 +3,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Automation Services',
+  description:
+    'Explore our services: custom workflow automation, 24/7 AI agents, intelligent chatbots, and e-commerce optimization solutions.',
+};
 
 const ServicesPage = () => {
   const services = [
