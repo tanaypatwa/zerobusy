@@ -131,16 +131,20 @@ const ServicesClientPage = () => {
             className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
           >
             Transform your business with our comprehensive AI automation solutions.
-            From workflow automation to intelligent agents, we've got you covered.
+            From workflow automation to intelligent agents, we&apos;ve got you covered.
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
           >
-            <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-              Get Started Today
+            <Link href="/contact" className="btn-primary text-lg">
+              Get Your Custom Quote
             </Link>
+            <p className="mt-4 text-sm text-gray-600">
+              Or <Link href="/contact" className="text-primary hover:underline">schedule a free consultation</Link> to discuss your needs.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -240,6 +244,21 @@ const ServicesClientPage = () => {
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Automate Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-dark mb-6">It&apos;s Time to Upgrade Your Operations</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              Manual, repetitive tasks are silently costing your business more than just money—they&apos;re costing you time, growth opportunities, and competitive edge. AI-powered automation is no longer a luxury for large corporations; it&apos;s a vital tool for agile businesses ready to scale.
+            </p>
+            <Link href="/about" className="text-primary font-semibold hover:underline">
+              Learn more about our mission
+            </Link>
           </div>
         </div>
       </section>

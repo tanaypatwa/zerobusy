@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from "next/image";
-import Logo from '@/components/Logo';
 
 // Hero Section Component
 const HeroSection = () => {
@@ -325,7 +324,7 @@ const TestimonialsSection = () => {
                   <p className="text-gray-600 text-sm">{testimonial.company}</p>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed italic">"{testimonial.text}"</p>
+              <p className="text-gray-700 leading-relaxed italic">&quot;{testimonial.text}&quot;</p>
             </motion.div>
           ))}
         </div>

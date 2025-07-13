@@ -26,7 +26,7 @@ const ContactPage = () => {
     setStatus('sending');
     try {
       const res = await fetch(
-        'https://n8n.srv871514.hstgr.cloud/webhook/Zero-Busy-Contact',
+        process.env.NEXT_PUBLIC_CONTACT_FORM_URL!,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -72,7 +72,7 @@ const ContactPage = () => {
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
             Ready to transform your business with AI automation? 
-            Let's discuss how we can help you streamline, automate, and scale.
+            Let&apos;s discuss how we can help you streamline, automate, and scale.
           </motion.p>
         </div>
       </section>
@@ -217,10 +217,10 @@ const ContactPage = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-dark mb-6">Let's talk about your automation needs</h2>
+                <h2 className="text-3xl font-bold text-dark mb-6">Let&apos;s talk about your automation needs</h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
                   Ready to eliminate busy work and focus on growing your business? 
-                  We're here to help you discover the perfect automation solutions for your unique needs.
+                  We&apos;re here to help you discover the perfect automation solutions for your unique needs.
                 </p>
               </div>
 
@@ -235,7 +235,7 @@ const ContactPage = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-dark">Email Us</h3>
                     <p className="text-gray-600">automate@zerobusy.com</p>
-                    <p className="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
+                    <p className="text-sm text-gray-500 mt-1">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
 
@@ -248,7 +248,7 @@ const ContactPage = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-dark">Schedule a Call</h3>
                     <p className="text-gray-600">Book a free 30-minute consultation</p>
-                    <p className="text-sm text-gray-500 mt-1">Available Monday - Friday, 9 AM - 6 PM PST</p>
+                    <a href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target='_blank' className='text-primary hover:underline'>Let&apos;s connect</a>
                   </div>
                 </div>
 
@@ -272,7 +272,7 @@ const ContactPage = () => {
                 <h3 className="text-lg font-semibold text-dark mb-2">Quick Response Guaranteed</h3>
                 <p className="text-gray-600">
                   We typically respond to all inquiries within 24 hours. For urgent matters, 
-                  please mention it in your message and we'll prioritize your request.
+                  please mention it in your message and we&apos;ll prioritize your request.
                 </p>
               </div>
 

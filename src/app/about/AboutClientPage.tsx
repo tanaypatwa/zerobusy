@@ -26,7 +26,7 @@ const AboutPage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              We're on a mission to eliminate busy work and help digital businesses 
+              We&apos;re on a mission to eliminate busy work and help digital businesses 
               focus on what truly matters through intelligent AI automation.
             </motion.p>
           </div>
@@ -53,7 +53,7 @@ const AboutPage = () => {
                 and missing opportunities because they were stuck in the operational weeds.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                That's when we decided to build ZeroBusy - to give business owners their time back 
+                That&apos;s when we decided to build ZeroBusy - to give business owners their time back 
                 through intelligent automation that actually works.
               </p>
             </motion.div>
@@ -218,7 +218,7 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
           >
-            Let's discuss how ZeroBusy can transform your business operations
+            Let&apos;s discuss how ZeroBusy can transform your business operations
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
