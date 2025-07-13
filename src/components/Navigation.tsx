@@ -39,7 +39,7 @@ const Navigation: React.FC = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="#contact" className="btn-primary">
+            <Link href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Book a Call
             </Link>
           </div>
@@ -78,7 +78,9 @@ const Navigation: React.FC = () => {
                 </Link>
               ))}
               <Link 
-                href="#contact" 
+                href="https://calendar.app.google/uYHrdAiAqTZCC6qv9"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary mt-4 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >

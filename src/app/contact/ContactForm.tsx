@@ -2,20 +2,6 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: "Contact Us | ZeroBusy",
-  description: "Get in touch with ZeroBusy to discuss your AI automation needs. Schedule a free consultation or send us a message to start streamlining your business today.",
-  openGraph: {
-    title: "Contact Us | ZeroBusy",
-    description: "Ready to automate? Get in touch with the ZeroBusy team.",
-  },
-  twitter: {
-    title: "Contact Us | ZeroBusy",
-    description: "Ready to automate? Get in touch with the ZeroBusy team.",
-  },
-};
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +12,7 @@ const ContactPage = () => {
     service: '',
     message: ''
   });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -34,11 +21,35 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic will be added later
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    setStatus('sending');
+    try {
+      const res = await fetch(
+        'https://n8n.srv871514.hstgr.cloud/webhook/Zero-Busy-Contact',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (res.ok) {
+        setStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          message: '',
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      console.error('Error submitting form', err);
+      setStatus('error');
+    }
   };
 
   return (
@@ -186,6 +197,15 @@ const ContactPage = () => {
                 >
                   Send Message
                 </button>
+                {status === 'sending' && (
+                  <p className="text-blue-500 mt-2 text-center">Sending...</p>
+                )}
+                {status === 'success' && (
+                  <p className="text-green-600 mt-2 text-center">Message sent successfully!</p>
+                )}
+                {status === 'error' && (
+                  <p className="text-red-600 mt-2 text-center">An error occurred.</p>
+                )}
               </form>
             </motion.div>
 

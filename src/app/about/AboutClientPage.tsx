@@ -2,21 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import type { Metadata } from 'next';
-import Logo from '@/components/Logo';
-
-export const metadata: Metadata = {
-  title: "About Us | ZeroBusy",
-  description: "Learn about ZeroBusy's mission to eliminate busy work for digital businesses. Discover our story, values, and why we're the right partner for your AI automation journey.",
-  openGraph: {
-    title: "About Us | ZeroBusy",
-    description: "Discover the story and mission behind ZeroBusy.",
-  },
-  twitter: {
-    title: "About Us | ZeroBusy",
-    description: "Discover the story and mission behind ZeroBusy.",
-  },
-};
 
 const AboutPage = () => {
   return (
@@ -242,7 +227,7 @@ const AboutPage = () => {
             viewport={{ once: true }}
           >
             <a 
-              href="/contact" 
+              href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" 
               className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl inline-block"
             >
               Schedule a Free Consultation

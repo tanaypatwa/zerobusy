@@ -3,22 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: "Our Services | ZeroBusy",
-  description: "Explore our AI automation services, including workflow automation, AI agents, chatbots, and ecommerce solutions. Transform your business with ZeroBusy.",
-  openGraph: {
-    title: "Our Services | ZeroBusy",
-    description: "Explore our comprehensive AI automation solutions.",
-  },
-  twitter: {
-    title: "Our Services | ZeroBusy",
-    description: "Explore our comprehensive AI automation solutions.",
-  },
-};
-
-const ServicesPage = () => {
+const ServicesClientPage = () => {
   const services = [
     {
       icon: "⚡",
@@ -144,7 +130,7 @@ const ServicesPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
           >
-            Transform your business with our comprehensive AI automation solutions. 
+            Transform your business with our comprehensive AI automation solutions.
             From workflow automation to intelligent agents, we've got you covered.
           </motion.p>
           <motion.div
@@ -175,7 +161,7 @@ const ServicesPage = () => {
                 <div className="text-5xl mb-6">{service.icon}</div>
                 <h3 className="text-3xl font-bold text-dark mb-4">{service.title}</h3>
                 <p className="text-lg text-gray-600 mb-6">{service.description}</p>
-                
+
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-dark mb-3">Features Include:</h4>
                   <ul className="space-y-2">
@@ -257,120 +243,8 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Industry Solutions */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-dark mb-6"
-            >
-              Industry Solutions
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
-            >
-              Tailored automation solutions for different business types
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "SaaS Companies",
-                description: "User onboarding, support automation, and customer success workflows",
-                icon: "💻"
-              },
-              {
-                title: "E-commerce Stores",
-                description: "Inventory management, order processing, and customer service automation",
-                icon: "🛍️"
-              },
-              {
-                title: "Digital Agencies",
-                description: "Client reporting, project management, and lead generation automation",
-                icon: "🎨"
-              },
-              {
-                title: "Consulting Firms",
-                description: "Proposal generation, client onboarding, and project tracking automation",
-                icon: "📊"
-              },
-              {
-                title: "Online Education",
-                description: "Student enrollment, course delivery, and assessment automation",
-                icon: "🎓"
-              },
-              {
-                title: "Service Businesses",
-                description: "Appointment booking, customer communication, and billing automation",
-                icon: "🔧"
-              }
-            ].map((industry, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="text-4xl mb-4">{industry.icon}</div>
-                <h3 className="text-xl font-bold text-dark mb-4">{industry.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{industry.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="contact" className="section-padding gradient-bg">
-        <div className="container-custom text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
-          >
-            Ready to Automate Your Business?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
-          >
-            Book a free consultation to discover which automation solutions are right for your business
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link href="#" className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl">
-              Schedule Free Consultation
-            </Link>
-            <Link href="/contact" className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg text-lg hover:bg-white hover:text-primary transition-colors duration-200">
-              Contact Us
-            </Link>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };
 
-export default ServicesPage; 
+export default ServicesClientPage; 

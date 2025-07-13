@@ -8,6 +8,13 @@ import Logo from '@/components/Logo';
 
 // Hero Section Component
 const HeroSection = () => {
+  const clients = [
+    { href: "https://hypefly.co.in", src: "/clients/hypefly.webp", alt: "Hype Fly India", width: 120, height: 40 },
+    { href: "https://veergidwanicoaching.com/42days/", src: "/clients/veer-gidwani.jpeg", alt: "Veer Gidwani", width: 80, height: 40 },
+    { href: "https://getvantage.co", src: "/clients/getvantage.png", alt: "GetVantage", width: 150, height: 40 },
+    { href: "https://mumbairetinacenter.com", src: "/clients/mumbai-retina-center.png", alt: "Mumbai Retina Center", width: 40, height: 40, name: "Mumbai Retina Center" },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Background Elements */}
@@ -62,57 +69,44 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16"
+            className="mt-16 text-center"
           >
-            <p className="text-gray-500 mb-6">Trusted by digital businesses worldwide</p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
-              <Image
-                src="https://hypefly.co.in/_next/image?url=%2Flogo.webp&w=640&q=75"
-                alt="Hype Fly India"
-                width={100}
-                height={40}
-              />
-              <Image
-                src="https://d3v0px0pttie1i.cloudfront.net/uploads/branding/logo/2f550f83-07e9-4874-b7e2-a438f430dba8/731b3853.jpeg"
-                alt="Veer Gidwani"
-                width={100}
-                height={40}
-              />
-              <Image
-                src="https://dashboard.getvantage.co/assets/img/newlogo-black.png"
-                alt="GetVantage"
-                width={150}
-                height={40}
-              />
-              <div className="flex items-center space-x-2">
-                <Image
-                  src="https://mumbairetinacenter.com/assets/Logo.png"
-                  alt="Mumbai Retina Center"
-                  width={40}
-                  height={40}
-                />
-                <span className="text-sm font-medium text-gray-600">Mumbai Retina Center</span>
-              </div>
+            <p className="text-gray-500 mb-8">Trusted by businesses like</p>
+            <div className="w-full max-w-4xl mx-auto overflow-hidden relative">
+                <motion.div
+                  className="flex items-center"
+                  animate={{
+                    x: ['0%', '-100%'],
+                  }}
+                  transition={{
+                    ease: 'linear',
+                    duration: 20,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }}
+                >
+                  {[...clients, ...clients].map((client, i) => (
+                    <Link href={client.href} key={i} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 flex items-center justify-center p-4 mx-4" style={{ minWidth: '160px' }}>
+                      <Image
+                        src={client.src}
+                        alt={client.alt}
+                        width={client.width}
+                        height={client.height}
+                        className="object-contain h-10 w-auto"
+                      />
+                      {client.name && (
+                        <span className="text-sm font-medium text-gray-600 ml-2 whitespace-nowrap">{client.name}</span>
+                      )}
+                    </Link>
+                  ))}
+                </motion.div>
+                <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-gray-50 to-transparent"></div>
+                <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-gray-50 to-transparent"></div>
             </div>
+            <p className="text-gray-500 font-medium text-center mt-4">+ and many more</p>
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 };
@@ -260,25 +254,25 @@ const TestimonialsSection = () => {
     {
       name: "Abbas Zaveri",
       company: "Founder, Hype Fly",
-      text: "ZeroBusy helped us automate our supply and inventory order automation with the tools we already had. We’re saving 30+ hours a week on manual work, and our ops are finally running smooth without daily fire-fighting.",
+      text: "ZB completely transformed our CRM and order flow - what used to take 40+ hours of manual chaos is now a smooth, fully automated system. They gave me back my peace of mind. No more dropped leads, missed updates, or delayed orders. Everything just works. ZB doesn't just automate - they think strategically and genuinely care about impact.",
       avatar: "AZ"
     },
     {
       name: "Veer Gidwani",
       company: "Online Coach",
-      text: "As a solopreneur, I was overwhelmed. ZeroBusy set up AI systems to handle my DMs, schedule calls, and generate contracts — it’s like having a full-time assistant - I fired our admin manager and saved $18k a year after these systems were set up.",
+      text: "As a solopreneur, my funnel was a mess of DMs and follow-ups. ZeroBusy built an AI system replaced my admin team (who were costing me $18k a year) and qualifies leads and books calls right in my inbox. It's like having a sales assistant that never sleeps, letting me focus entirely on coaching.",
       avatar: "VG"
     },
     {
       name: "Dr. Ajay Dudani",
       company: "Founder, Mumbai Retina Center",
-      text: "ZeroBusy built custom automations that streamlined our appointment system and reporting. Patient wait times dropped drastically, and our backend now runs without manual errors.",
+      text: "Our patient management was chaotic. ZeroBusy built a custom automation that streamlined our appointment system from booking to reporting. Patient wait times have dropped, our backend runs without manual errors, and my staff can focus on patient care.",
       avatar: "AD"
     },
     {
       name: "Amit Srivastava",
       company: "CTO, GetVantage",
-      text: "We replaced messy, manual lead gen with a fully automated AI workflow that finds, filters, and reaches out to high-quality prospects — 24/7. Huge time and cost savings, thanks to ZeroBusy.",
+      text: "We needed to scale our deal flow without drowning in manual work. ZeroBusy built a fully automated AI workflow that finds, filters, and engages high-quality prospects 24/7. It’s a huge time-saver and a core part of our growth engine now.",
       avatar: "AS"
     }
   ];
