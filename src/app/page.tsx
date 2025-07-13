@@ -243,27 +243,33 @@ const HowItWorksSection = () => {
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      company: "TechStart Inc.",
-      text: "ZeroBusy transformed our operations completely. We saved 20+ hours per week on manual tasks!",
-      avatar: "SJ"
+      name: "Abbas Zaveri",
+      company: "Founder, Hype Fly",
+      text: "ZeroBusy helped us automate our supply and inventory order automation with the tools we already had. We’re saving 30+ hours a week on manual work, and our ops are finally running smooth without daily fire-fighting.",
+      avatar: "AZ"
     },
     {
-      name: "Mike Chen", 
-      company: "Digital Solutions Co.",
-      text: "The AI automation solutions are incredible. Our customer response time improved by 80%.",
-      avatar: "MC"
+      name: "Veer Gidwani",
+      company: "Online Coach",
+      text: "As a solopreneur, I was overwhelmed. ZeroBusy set up AI systems to handle my DMs, schedule calls, and generate contracts — it’s like having a full-time assistant - I fired our admin manager and saved $18k a year after these systems were set up.",
+      avatar: "VG"
     },
     {
-      name: "Lisa Rodriguez",
-      company: "E-commerce Plus",
-      text: "Our ecommerce automation increased efficiency and reduced errors significantly. Highly recommend!",
-      avatar: "LR"
+      name: "Dr. Ajay Dudani",
+      company: "Founder, Mumbai Retina Center",
+      text: "ZeroBusy built custom automations that streamlined our appointment system and reporting. Patient wait times dropped drastically, and our backend now runs without manual errors.",
+      avatar: "AD"
+    },
+    {
+      name: "Amit Srivastava",
+      company: "CTO, GetVantage",
+      text: "We replaced messy, manual lead gen with a fully automated AI workflow that finds, filters, and reaches out to high-quality prospects — 24/7. Huge time and cost savings, thanks to ZeroBusy.",
+      avatar: "AS"
     }
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section id="testimonials" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.h2
