@@ -276,8 +276,14 @@ const TestimonialsSection = () => {
     {
       name: "Amit Srivastava",
       company: "CTO, GetVantage",
-      text: "We needed to scale our deal flow without drowning in manual work. ZeroBusy built a fully automated AI workflow that finds, filters, and engages high-quality prospects 24/7. It’s a huge time-saver and a core part of our growth engine now.",
+      text: "We needed to scale our deal flow without drowning in manual work. ZeroBusy built a fully automated AI workflow that finds, filters, and engages high-quality prospects 24/7. It's a huge time-saver and a core part of our growth engine now.",
       avatar: "AS"
+    },
+    {
+      name: "Chief Automation Officer",
+      company: "Aidaddy.com",
+      text: "The ZeroBusy team was a pleasure to work with. They quickly understood our workflow needs and delivered efficient, clean, and well-documented automations. Communication was clear and timely throughout the project, and they proactively suggested improvements that added real value. Would definitely work with them again for future automation needs!",
+      avatar: "CAO"
     }
   ];
 
