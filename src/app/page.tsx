@@ -256,6 +256,12 @@ const HowItWorksSection = () => {
 const TestimonialsSection = () => {
   const testimonials = [
     {
+      name: "Javier Villa",
+      company: "CAO, Aidaddy.com",
+      text: "ZeroBusy automated our proposal creation process end-to-end, reducing manual work by 80% and eliminating documentation errors. Their proactive improvements and clean implementation transformed our workflow efficiency.",
+      avatar: "JV"
+    },
+    {
       name: "Abbas Zaveri",
       company: "Founder, Hype Fly",
       text: "ZB completely transformed our CRM and order flow - what used to take 40+ hours of manual chaos is now a smooth, fully automated system. They gave me back my peace of mind. No more dropped leads, missed updates, or delayed orders. Everything just works. ZB doesn't just automate - they think strategically and genuinely care about impact.",
@@ -278,12 +284,6 @@ const TestimonialsSection = () => {
       company: "CTO, GetVantage",
       text: "We needed to scale our deal flow without drowning in manual work. ZeroBusy built a fully automated AI workflow that finds, filters, and engages high-quality prospects 24/7. It's a huge time-saver and a core part of our growth engine now.",
       avatar: "AS"
-    },
-    {
-      name: "Chief Automation Officer",
-      company: "Aidaddy.com",
-      text: "The ZeroBusy team was a pleasure to work with. They quickly understood our workflow needs and delivered efficient, clean, and well-documented automations. Communication was clear and timely throughout the project, and they proactively suggested improvements that added real value. Would definitely work with them again for future automation needs!",
-      avatar: "CAO"
     }
   ];
 
