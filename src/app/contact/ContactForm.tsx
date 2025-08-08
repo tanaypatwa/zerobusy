@@ -2,17 +2,20 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    service: '',
     company: '',
     phone: '',
-    service: '',
-    message: ''
+    message: '',
+    website: ''
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -23,26 +26,17 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (formData.website) return; // honeypot
     setStatus('sending');
     try {
-      const res = await fetch(
-        process.env.NEXT_PUBLIC_CONTACT_FORM_URL!,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        }
-      );
+      const res = await fetch(process.env.NEXT_PUBLIC_CONTACT_FORM_URL!, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
       if (res.ok) {
         setStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          service: '',
-          message: '',
-        });
+        setFormData({ name: '', email: '', service: '', company: '', phone: '', message: '', website: '' });
       } else {
         setStatus('error');
       }
@@ -89,124 +83,60 @@ const ContactPage = () => {
               className="bg-gray-50 p-8 rounded-2xl"
             >
               <h2 className="text-3xl font-bold text-dark mb-6">Send us a message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {status === 'success' ? (
+                <div className="space-y-4 text-center">
+                  <p className="text-lg text-gray-700">Thanks! We’ll respond within 24 hours. You can also book directly now.</p>
+                  <Link href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
+                    Get Your Free Automation Assessment
+                  </Link>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder="Your full name"
-                    />
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                    <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder="Your company"
-                    />
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                    <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder="+1 (555) 000-0000"
-                    />
+                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">Service *</label>
+                    <select id="service" name="service" required value={formData.service} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
+                      <option value="">Select a service</option>
+                      <option value="workflow-automation">Workflow Automation</option>
+                      <option value="ai-agents">AI Agents</option>
+                      <option value="chatbots">Chatbots</option>
+                      <option value="ecommerce-automation">Ecommerce Automation</option>
+                    </select>
                   </div>
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                    Service Interested In
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="workflow-automation">Workflow Automation</option>
-                    <option value="ai-agents">AI Agents</option>
-                    <option value="chatbots">Chatbots</option>
-                    <option value="ecommerce-automation">Ecommerce Automation</option>
-                    <option value="custom-solution">Custom Solution</option>
-                    <option value="consultation">Free Consultation</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
-                    placeholder="Tell us about your business challenges and how we can help..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full btn-primary text-lg py-4"
-                >
-                  Send Message
-                </button>
-                {status === 'sending' && (
-                  <p className="text-blue-500 mt-2 text-center">Sending...</p>
-                )}
-                {status === 'success' && (
-                  <p className="text-green-600 mt-2 text-center">Message sent successfully!</p>
-                )}
-                {status === 'error' && (
-                  <p className="text-red-600 mt-2 text-center">An error occurred.</p>
-                )}
-              </form>
+                  <button type="button" onClick={() => setDetailsOpen(!detailsOpen)} className="text-primary underline">
+                    {detailsOpen ? 'Hide extra details' : 'Add more details'}
+                  </button>
+                  {detailsOpen && (
+                    <div className="space-y-4">
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                        <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" />
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" />
+                      </div>
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"></textarea>
+                      </div>
+                    </div>
+                  )}
+                  <input type="text" name="website" value={formData.website} onChange={handleChange} className="hidden" tabIndex={-1} autoComplete="off" />
+                  <button type="submit" className="w-full btn-primary text-lg py-4">
+                    Send Message
+                  </button>
+                  {status === 'sending' && <p className="text-blue-500 mt-2 text-center">Sending...</p>}
+                  {status === 'error' && <p className="text-red-600 mt-2 text-center">An error occurred.</p>}
+                </form>
+              )}
             </motion.div>
 
             {/* Contact Information */}

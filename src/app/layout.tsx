@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,11 +32,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${montserrat.variable} font-sans antialiased`}>
+      <body className={`${montserrat.variable} font-sans antialiased`}> 
         <Navigation />
         <main className="pt-16 lg:pt-20">
           {children}
         </main>
+        <StickyCTA />
         <Footer />
       </body>
     </html>
