@@ -15,7 +15,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white pt-28 pb-20">
+    <section className="relative min-h-[80vh] bg-gradient-to-br from-gray-50 to-white pt-24 pb-16">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/10 blur-3xl"></div>
@@ -30,11 +30,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl font-bold leading-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+            className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight text-dark"
           >
-            <span className="block">Streamline.</span>
-            <span className="block text-primary">Automate.</span>
-            <span className="block text-accent">Scale.</span>
+            AI-powered automation that saves 15–30 hours per week
           </motion.h1>
 
           {/* Subheadline */}
@@ -42,10 +40,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto mb-8 max-w-4xl px-4 text-xl leading-relaxed text-gray-600 sm:text-2xl md:text-3xl"
+            className="mx-auto mb-6 max-w-3xl px-4 text-lg leading-relaxed text-gray-600 sm:text-xl"
           >
-            We help digital businesses save time through intelligent AI automation.
-            Stop doing busy work and start focusing on what matters most.
+            Cut busy work, reduce errors by up to 95%, and scale with 24/7 AI. We build practical automations for digital businesses.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -57,14 +54,15 @@ const HeroSection = () => {
           >
             <Link
               href="https://calendar.app.google/uYHrdAiAqTZCC6qv9"
+              id="hero-cta"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary px-8 py-4 text-lg"
             >
-              Book a Free Call
+              Get Your Free Automation Assessment
             </Link>
-            <Link href="/services" className="btn-secondary px-8 py-4 text-lg">
-              View Services
+            <Link href="/services" className="text-primary hover:underline text-lg">
+              Explore Services
             </Link>
           </motion.div>
 
@@ -185,30 +183,67 @@ const ServicesSection = () => {
   );
 };
 
-// How It Works Section
-const HowItWorksSection = () => {
+// Case Studies Section
+const CaseStudiesSection = () => {
+  const cases = [
+    {
+      client: 'Ecommerce Brand',
+      problem: 'Manual follow-ups and abandoned carts',
+      solution: 'Automated customer journeys',
+      result: '+25% sales',
+      quote: 'Automation recovered revenue we didn\'t know we were missing.'
+    },
+    {
+      client: 'SaaS Company',
+      problem: 'Hours lost to data entry',
+      solution: 'Workflow automation',
+      result: '15h saved weekly & 95% fewer errors',
+      quote: 'Our team finally focuses on product, not spreadsheets.'
+    },
+    {
+      client: 'Service Agency',
+      problem: 'Leads lost after hours',
+      solution: '24/7 AI agent',
+      result: 'Round-the-clock qualification',
+      quote: 'Clients get answers instantly, even at 2am.'
+    },
+  ];
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="container-custom">
+        <div className="mb-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-dark mb-6">Proven results</h2>
+        </div>
+        <div className="flex overflow-x-auto space-x-6 pb-4">
+          {cases.map((c, i) => (
+            <div key={i} className="flex-shrink-0 w-80 bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="font-semibold text-dark mb-2">{c.client}</h3>
+              <p className="text-sm text-gray-600 mb-2">Problem: {c.problem}</p>
+              <p className="text-sm text-gray-600 mb-2">Solution: {c.solution}</p>
+              <p className="text-sm text-gray-600 mb-2">Results: {c.result}</p>
+              <p className="text-gray-700 italic">"{c.quote}"</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Process Section
+const ProcessSection = () => {
   const steps = [
-    {
-      step: "01",
-      title: "Analyze",
-      description: "We assess your current workflows and identify automation opportunities."
-    },
-    {
-      step: "02",
-      title: "Automate",
-      description: "Our team builds and implements custom AI solutions tailored to your needs."
-    },
-    {
-      step: "03",
-      title: "Scale",
-      description: "Watch your business grow as automation handles the work while you focus on strategy."
-    }
+    { step: '1', title: 'Discovery Call', description: 'Understand goals and current workflow.' },
+    { step: '2', title: 'Strategy Development', description: 'Design a tailored automation roadmap.' },
+    { step: '3', title: 'Implementation', description: 'Build and integrate your automations.' },
+    { step: '4', title: 'Optimization', description: 'Monitor results and iterate for growth.' },
   ];
 
   return (
     <section className="section-padding bg-gray-50">
       <div className="container-custom">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -216,34 +251,24 @@ const HowItWorksSection = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-dark mb-6"
           >
-            How It Works
+            Our Process
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
-          >
-            Our simple, smart, and scalable process gets you automated fast
-          </motion.p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="flex-shrink-0 md:flex-shrink text-center md:text-left"
             >
-              <div className="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                {step.step}
+              <div className="mb-4 flex items-center justify-center md:justify-start">
+                <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold mr-4">{step.step}</span>
+                <h3 className="font-semibold text-dark">{step.title}</h3>
               </div>
-              <h3 className="text-2xl font-bold text-dark mb-4">{step.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{step.description}</p>
+              <p className="text-gray-600 md:ml-14">{step.description}</p>
             </motion.div>
           ))}
         </div>
@@ -369,7 +394,7 @@ const CTASection = () => {
           viewport={{ once: true }}
         >
           <Link href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl">
-            Book Your Free Call
+            Get Your Free Automation Assessment
           </Link>
         </motion.div>
       </div>
@@ -383,7 +408,8 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ServicesSection />
-      <HowItWorksSection />
+      <CaseStudiesSection />
+      <ProcessSection />
       <TestimonialsSection />
       <CTASection />
     </>
