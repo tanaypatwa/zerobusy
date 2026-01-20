@@ -80,7 +80,7 @@ const HeroSection = () => {
             className="mt-16 text-center"
           >
             <p className="text-gray-500 mb-8">Trusted by businesses like</p>
-            <div className="w-full max-w-4xl mx-auto overflow-hidden relative">
+            <div className="w-full mx-auto overflow-hidden relative">
                 <motion.div
                   className="flex items-center"
                   animate={{
@@ -88,28 +88,34 @@ const HeroSection = () => {
                   }}
                   transition={{
                     ease: 'linear',
-                    duration: 20,
+                    duration: 30,
                     repeat: Infinity,
                     repeatType: "loop",
                   }}
                 >
-                  {[...clients, ...clients].map((client, i) => (
-                    <Link href={client.href} key={i} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 flex items-center justify-center p-4 mx-4" style={{ minWidth: '160px' }}>
+                  {[...clients, ...clients, ...clients].map((client, i) => (
+                    <Link 
+                      href={client.href} 
+                      key={i} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex-shrink-0 flex items-center justify-center px-6 py-4 mx-2 sm:mx-4"
+                    >
                       <Image
                         src={client.src}
                         alt={client.alt}
                         width={client.width}
                         height={client.height}
-                        className="object-contain h-10 w-auto"
+                        className="object-contain h-8 sm:h-10 w-auto max-w-[100px] sm:max-w-[140px]"
                       />
                       {client.name && (
-                        <span className="text-sm font-medium text-gray-600 ml-2 whitespace-nowrap">{client.name}</span>
+                        <span className="text-xs sm:text-sm font-medium text-gray-600 ml-2 whitespace-nowrap hidden sm:inline">{client.name}</span>
                       )}
                     </Link>
                   ))}
                 </motion.div>
-                <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-gray-50 to-transparent"></div>
-                <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-gray-50 to-transparent"></div>
+                <div className="absolute top-0 left-0 w-8 sm:w-16 h-full bg-gradient-to-r from-gray-50 to-transparent pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-8 sm:w-16 h-full bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
             </div>
             <p className="text-gray-500 font-medium text-center mt-4">+ and many more</p>
           </motion.div>
