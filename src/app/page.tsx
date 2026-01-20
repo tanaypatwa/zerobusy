@@ -8,10 +8,14 @@ import Image from "next/image";
 // Hero Section Component
 const HeroSection = () => {
   const clients = [
-    { href: "https://hypefly.co.in", src: "/clients/hypefly.webp", alt: "Hype Fly India", width: 120, height: 40 },
     { href: "https://veergidwanicoaching.com/42days/", src: "/clients/veer-gidwani.jpeg", alt: "Veer Gidwani", width: 80, height: 40 },
-    { href: "https://getvantage.co", src: "/clients/getvantage.png", alt: "GetVantage", width: 150, height: 40 },
-    { href: "https://mumbairetinacenter.com", src: "/clients/mumbai-retina-center.png", alt: "Mumbai Retina Center", width: 40, height: 40, name: "Mumbai Retina Center" },
+    { href: "https://hypefly.co.in", src: "/clients/hypefly.webp", alt: "Hype Fly India", width: 120, height: 40 },
+    // { href: "https://getvantage.co", src: "/clients/getvantage.png", alt: "GetVantage", width: 150, height: 40 },
+    { href: "https://mumbairetinacenter.com", src: "/clients/mumbai-retina-center.png", alt: "Mumbai Retina Center", width: 80, height: 40, name: "Mumbai Retina Center" },
+    { href: "https://sneakinn.in/", src: "/clients/sneakinn.webp", alt: "Sneakinn", width: 120, height: 40 },
+    { href: "https://vaayurealty.com/", src: "/clients/vaayu-realty.png", alt: "Vaayu Realty", width: 140, height: 60 },
+    { href: "https://keygetaways.com/", src: "/clients/key-getaways.svg", alt: "Key Getaways", width: 140, height: 40 },
+    { href: "#", src: "/clients/indira-gems.png", alt: "Indira Gems", width: 120, height: 60 },
   ];
 
   return (
@@ -278,13 +282,13 @@ const TestimonialsSection = () => {
       company: "Founder, Mumbai Retina Center",
       text: "Our patient management was chaotic. ZeroBusy built a custom automation that streamlined our appointment system from booking to reporting. Patient wait times have dropped, our backend runs without manual errors, and my staff can focus on patient care.",
       avatar: "AD"
-    },
-    {
-      name: "Amit Srivastava",
-      company: "CTO, GetVantage",
-      text: "We needed to scale our deal flow without drowning in manual work. ZeroBusy built a fully automated AI workflow that finds, filters, and engages high-quality prospects 24/7. It's a huge time-saver and a core part of our growth engine now.",
-      avatar: "AS"
     }
+    // {
+    //   name: "Amit Srivastava",
+    //   company: "CTO, GetVantage",
+    //   text: "We needed to scale our deal flow without drowning in manual work. ZeroBusy built a fully automated AI workflow that finds, filters, and engages high-quality prospects 24/7. It's a huge time-saver and a core part of our growth engine now.",
+    //   avatar: "AS"
+    // }
   ];
 
   return (
