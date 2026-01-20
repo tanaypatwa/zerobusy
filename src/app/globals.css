@@ -151,6 +151,20 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Mobile logo carousel animation */
+@keyframes scroll-mobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-mobile {
+  animation: scroll-mobile 10s linear infinite;
+}
+
 /* Dark mode compatibility */
 @media (prefers-color-scheme: dark) {
   :root {
