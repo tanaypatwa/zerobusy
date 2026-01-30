@@ -44,18 +44,11 @@ const AboutPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold text-dark mb-6">Our Story</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                ZeroBusy was born from a simple observation: too many talented business owners 
-                were spending countless hours on repetitive tasks instead of growing their businesses.
-              </p>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                We saw entrepreneurs drowning in manual workflows, spending late nights on data entry, 
-                and missing opportunities because they were stuck in the operational weeds.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                That&apos;s when we decided to build ZeroBusy - to give business owners their time back 
-                through intelligent automation that actually works.
-              </p>
+              <ul className="text-lg text-gray-600 mb-6 leading-relaxed space-y-4">
+                <li>Too many talented owners were buried in repetitive tasks instead of growth.</li>
+                <li>Manual workflows meant late nights, data entry, and missed opportunities.</li>
+                <li>We built ZeroBusy to give that time back with practical, working automation.</li>
+              </ul>
             </motion.div>
             
             <motion.div

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Logo from './Logo';
+import DarkModeToggle from './DarkModeToggle';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,6 @@ const Navigation: React.FC = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -37,10 +37,11 @@ const Navigation: React.FC = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button & Dark mode */}
           <div className="hidden md:flex items-center space-x-4">
+            <DarkModeToggle />
             <Link href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Book a Call
+              Get Your Free Automation Assessment
             </Link>
           </div>
 
@@ -77,15 +78,18 @@ const Navigation: React.FC = () => {
                   {item.name}
                 </Link>
               ))}
-              <Link 
-                href="https://calendar.app.google/uYHrdAiAqTZCC6qv9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary mt-4 text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Book a Call
-              </Link>
+              <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                <DarkModeToggle />
+                <Link
+                  href="https://calendar.app.google/uYHrdAiAqTZCC6qv9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-center flex-1 ml-4"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Get Your Free Automation Assessment
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
