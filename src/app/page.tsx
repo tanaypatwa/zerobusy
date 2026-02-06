@@ -307,6 +307,12 @@ const TestimonialsSection = () => {
       avatar: "VG"
     },
     {
+      name: "Devansh Wadhwani",
+      company: "CEO, Vaayu Realty",
+      text: "Working with Tanay and the ZeroBusy team has been a seamless experience. They helped us implement a customized AI-native CRM solution tailored to our business needs, and the execution was smooth. What stood out even more was the consistent support we've received post-implementation. The ZeroBusy team has always been readily available for any assistance. Highly recommended for anyone looking for dependable AI/automation solutions and long-term partnership.",
+      avatar: "DW"
+    },
+    {
       name: "Dr. Ajay Dudani",
       company: "Founder, Mumbai Retina Center",
       text: "Our patient management was chaotic. ZeroBusy built a custom automation that streamlined our appointment system from booking to reporting. Patient wait times have dropped, our backend runs without manual errors, and my staff can focus on patient care.",
