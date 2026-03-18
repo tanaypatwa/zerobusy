@@ -324,12 +324,6 @@ const TestimonialsSection = () => {
       text: "Our patient management was chaotic. ZeroBusy built a custom automation that streamlined our appointment system from booking to reporting. Patient wait times have dropped, our backend runs without manual errors, and my staff can focus on patient care.",
       avatar: "AD"
     }
-    // {
-    //   name: "Amit Srivastava",
-    //   company: "CTO, GetVantage",
-    //   text: "We needed to scale our deal flow without drowning in manual work. ZeroBusy built a fully automated AI workflow that finds, filters, and engages high-quality prospects 24/7. It's a huge time-saver and a core part of our growth engine now.",
-    //   avatar: "AS"
-    // }
   ];
 
   return (
