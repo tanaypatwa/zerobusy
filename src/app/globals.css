@@ -138,6 +138,15 @@
   animation: spin-minute 1s linear infinite;
 }
 
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Utility classes */
 .text-gradient {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);

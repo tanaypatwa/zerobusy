@@ -289,6 +289,12 @@ const HowItWorksSection = () => {
 const TestimonialsSection = () => {
   const testimonials = [
     {
+      name: "Michael T.",
+      company: "Founder, Key Getaways",
+      text: "Running a multi-property vacation rental business means a thousand small things need to happen every day. Before we adopted these AI driven systems, most of that was manual and things would slip through the cracks. They automated our entire workflow — from the moment a guest reaches out to how we track maintenance and hold ourselves accountable on response times. Everything just works now. And whenever we need something new or want to improve a process, they build it fast. Honestly can't imagine going back to how we used to run things.",
+      avatar: "MT"
+    },
+    {
       name: "Javier Villa",
       company: "CAO, Aidaddy.com",
       text: "ZeroBusy automated our proposal creation process end-to-end, reducing manual work by 80% and eliminating documentation errors. Their proactive improvements and clean implementation transformed our workflow efficiency.",
@@ -350,7 +356,7 @@ const TestimonialsSection = () => {
           </motion.p>
         </div>
 
-        <div className="flex overflow-x-auto space-x-8 pb-4">
+        <div className="flex overflow-x-auto space-x-6 pb-4 snap-x snap-mandatory scroll-smooth px-1 -mx-1 scrollbar-hide">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -358,7 +364,7 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex-shrink-0 w-80 bg-gray-50 p-8 rounded-2xl"
+              className="flex-shrink-0 w-80 bg-gray-50 p-8 rounded-2xl snap-start"
             >
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
