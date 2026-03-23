@@ -295,6 +295,12 @@ const TestimonialsSection = () => {
       avatar: "MT"
     },
     {
+      name: "Sahil Jain",
+      company: "Co-Founder, Sneakinn",
+      text: "ZeroBusy doesn't just execute. They understand the problem, take ownership, and deliver with clean execution, strong documentation, and a smooth handover. It's saving me and my team 100+ hours of effort every month.",
+      avatar: "SJ"
+    },
+    {
       name: "Javier Villa",
       company: "CAO, Aidaddy.com",
       text: "ZeroBusy automated our proposal creation process end-to-end, reducing manual work by 80% and eliminating documentation errors. Their proactive improvements and clean implementation transformed our workflow efficiency.",
