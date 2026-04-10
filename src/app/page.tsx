@@ -4,20 +4,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from "next/image";
+import { homepageClients } from "./homepageClients";
 
 // Hero Section Component
 const HeroSection = () => {
-  const clients = [
-    { href: "https://veergidwanicoaching.com/42days/", src: "/clients/veer-gidwani.jpeg", alt: "Veer Gidwani", width: 80, height: 40 },
-    { href: "https://hypefly.co.in", src: "/clients/hypefly.webp", alt: "Hype Fly India", width: 120, height: 40 },
-    // { href: "https://getvantage.co", src: "/clients/getvantage.png", alt: "GetVantage", width: 150, height: 40 },
-    { href: "https://mumbairetinacenter.com", src: "/clients/mumbai-retina-center.png", alt: "Mumbai Retina Center", width: 80, height: 40, name: "Mumbai Retina Center" },
-    { href: "https://sneakinn.in/", src: "/clients/sneakinn.webp", alt: "Sneakinn", width: 120, height: 40 },
-    { href: "https://vaayurealty.com/", src: "/clients/vaayu-realty.png", alt: "Vaayu Realty", width: 140, height: 60 },
-    { href: "https://keygetaways.com/", src: "/clients/key-getaways.svg", alt: "Key Getaways", width: 140, height: 40 },
-    { href: "#", src: "/clients/indira-gems.png", alt: "Indira Gems", width: 120, height: 60 },
-  ];
-
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white pt-28 pb-20">
       {/* Background Elements */}
@@ -84,7 +74,7 @@ const HeroSection = () => {
             {/* Mobile Carousel */}
             <div className="w-full mx-auto overflow-hidden relative md:hidden">
                 <div className="flex items-center animate-scroll-mobile">
-                  {[...clients, ...clients].map((client, i) => (
+                  {[...homepageClients, ...homepageClients].map((client, i) => (
                     <Link 
                       href={client.href} 
                       key={i} 
@@ -121,7 +111,7 @@ const HeroSection = () => {
                     repeatType: "loop",
                   }}
                 >
-                  {[...clients, ...clients].map((client, i) => (
+                  {[...homepageClients, ...homepageClients].map((client, i) => (
                     <Link href={client.href} key={i} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 flex items-center justify-center p-4 mx-4" style={{ minWidth: '160px' }}>
                       <Image
                         src={client.src}
