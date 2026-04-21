@@ -6,87 +6,35 @@ import Link from 'next/link';
 
 const ServicesClientPage = () => {
   const services = [
-    {
-      icon: "⚡",
-      title: "Workflow Automation",
-      description: "Streamline your business processes and eliminate manual work",
-      features: [
-        "Data entry automation",
-        "Report generation",
-        "Email workflow automation",
-        "Task scheduling and management",
-        "Integration between tools",
-        "Approval process automation"
-      ],
-      benefits: [
-        "Save 15-30 hours per week",
-        "Reduce errors by 95%",
-        "Improve team productivity",
-        "Scale operations efficiently"
-      ],
-      pricing: "Starting at $2,500"
-    },
-    {
-      icon: "🤖",
-      title: "AI Agents",
-      description: "Intelligent AI agents that work 24/7 to handle complex business tasks",
-      features: [
-        "Customer inquiry handling",
-        "Lead qualification",
-        "Appointment scheduling",
-        "Data analysis and insights",
-        "Content creation assistance",
-        "Multi-language support"
-      ],
-      benefits: [
-        "24/7 availability",
-        "Instant response times",
-        "Consistent quality",
-        "Multilingual capabilities"
-      ],
-      pricing: "Starting at $3,500"
-    },
-    {
-      icon: "💬",
-      title: "Chatbots",
-      description: "Smart chatbots that engage customers and drive conversions",
-      features: [
-        "Website integration",
-        "FAQ automation",
-        "Lead capture",
-        "Product recommendations",
-        "Order status updates",
-        "Support ticket creation"
-      ],
-      benefits: [
-        "Increase conversion rates",
-        "Reduce support workload",
-        "Capture leads 24/7",
-        "Improve customer satisfaction"
-      ],
-      pricing: "Starting at $1,500"
-    },
-    {
-      icon: "🛒",
-      title: "Ecommerce Automation",
-      description: "Optimize your online store with intelligent automation",
-      features: [
-        "Inventory management",
-        "Order processing",
-        "Customer segmentation",
-        "Abandoned cart recovery",
-        "Price optimization",
-        "Review management"
-      ],
-      benefits: [
-        "Increase sales by 25%",
-        "Reduce operational costs",
-        "Improve customer experience",
-        "Scale without hiring"
-      ],
-      pricing: "Starting at $4,000"
-    }
-  ];
+  {
+    icon: '⚡',
+    title: 'Workflow Automation',
+    slug: 'workflow-automation',
+    benefits: ['Save 15-30 hours per week', 'Up to 95% error reduction', '24/7 availability'],
+    details: ['Data entry automation', 'Report generation', 'Email workflow automation', 'Task scheduling'],
+  },
+  {
+    icon: '🤖',
+    title: 'AI Agents',
+    slug: 'ai-agents',
+    benefits: ['24/7 availability', 'Instant response times', 'Consistent quality'],
+    details: ['Customer inquiry handling', 'Lead qualification', 'Appointment scheduling'],
+  },
+  {
+    icon: '💬',
+    title: 'Chatbots',
+    slug: 'chatbots',
+    benefits: ['Increase conversion rates', 'Reduce support workload', 'Capture leads 24/7'],
+    details: ['Website integration', 'FAQ automation', 'Product recommendations'],
+  },
+  {
+    icon: '🛒',
+    title: 'Ecommerce Automation',
+    slug: 'ecommerce-automation',
+    benefits: ['Up to 25% more sales', 'Reduce operational costs', 'Improve customer experience'],
+    details: ['Inventory management', 'Abandoned cart recovery', 'Price optimization'],
+  },
+];
 
   const process = [
     {
@@ -139,11 +87,11 @@ const ServicesClientPage = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Link href="/contact" className="btn-primary text-lg">
-              Get Your Custom Quote
+            <Link href="https://calendar.app.google/uYHrdAiAqTZCC6qv9" target="_blank" className="btn-primary text-lg">
+              Get Your Free Automation Assessment
             </Link>
             <p className="mt-4 text-sm text-gray-600">
-              Or <Link href="/contact" className="text-primary hover:underline">schedule a free consultation</Link> to discuss your needs.
+              Or <Link href="/services" className="text-primary hover:underline">explore services</Link> to see more options.
             </p>
           </motion.div>
         </div>
@@ -164,38 +112,25 @@ const ServicesClientPage = () => {
               >
                 <div className="text-5xl mb-6">{service.icon}</div>
                 <h3 className="text-3xl font-bold text-dark mb-4">{service.title}</h3>
-                <p className="text-lg text-gray-600 mb-6">{service.description}</p>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-dark mb-3">Features Include:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-700">
-                        <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                        {feature}
-                      </li>
+                <ul className="space-y-2 mb-4">
+                  {service.benefits.map((b, i) => (
+                    <li key={i} className="flex items-center text-gray-700">
+                      <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>{b}
+                    </li>
+                  ))}
+                </ul>
+                <details className="mb-4">
+                  <summary className="cursor-pointer text-primary">Show details</summary>
+                  <ul className="mt-2 space-y-1 pl-4">
+                    {service.details.map((d, i) => (
+                      <li key={i} className="text-gray-600 list-disc">{d}</li>
                     ))}
                   </ul>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-dark mb-3">Key Benefits:</h4>
-                  <ul className="space-y-2">
-                    {service.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-center text-gray-700">
-                        <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="border-t border-gray-200 pt-6">
-                  <div className="flex justify-end items-center">
-                    <Link href="/contact" className="btn-secondary">
-                      Learn More
-                    </Link>
-                  </div>
+                </details>
+                <div className="border-t border-gray-200 pt-6 text-right">
+                  <Link href={`/services/${service.slug}`} className="btn-secondary">
+                    Learn More
+                  </Link>
                 </div>
               </motion.div>
             ))}
