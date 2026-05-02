@@ -303,6 +303,12 @@ const TestimonialsSection = () => {
       avatar: "AZ"
     },
     {
+      name: "Rushil Khatwani",
+      company: "Khatwani Group",
+      text: "As a diversified offline retail company, we were struggling to scale with rigid control systems. ZeroBusy quickly understood our operations and built a custom solution that improved both accuracy and efficiency across key workflows. We're extremely satisfied with the execution and are now expanding automation with their team. Highly recommended for businesses looking to streamline and strengthen their systems.",
+      avatar: "RK"
+    },
+    {
       name: "Veer Gidwani",
       company: "Online Coach",
       text: "As a solopreneur, my funnel was a mess of DMs and follow-ups. ZeroBusy built an AI system replaced my admin team (who were costing me $18k a year) and qualifies leads and books calls right in my inbox. It's like having a sales assistant that never sleeps, letting me focus entirely on coaching.",
