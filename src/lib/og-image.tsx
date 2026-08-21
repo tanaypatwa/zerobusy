@@ -83,10 +83,11 @@ export function renderOgImage() {
             marginTop: 32,
             fontSize: 34,
             fontWeight: 500,
+            fontStyle: 'italic',
             color: '#CBD5E1',
           }}
         >
-          Streamline. Automate. Scale.
+          Automate the Busy, focus on what matters
         </div>
       </div>
     ),
