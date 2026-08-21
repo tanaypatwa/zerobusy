@@ -11,17 +11,33 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+const siteTitle = 'ZeroBusy | AI & Automation for Digital Businesses';
+const siteDescription =
+  'We build intelligent AI automations to help digital businesses save time, reduce costs, and scale operations. Stop the busy work, focus on growth.';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.zerobusy.com'),
   title: {
     template: '%s | ZeroBusy',
-    default: 'ZeroBusy | AI & Automation for Digital Businesses',
+    default: siteTitle,
   },
-  description:
-    'We build intelligent AI automations to help digital businesses save time, reduce costs, and scale operations. Stop the busy work, focus on growth.',
+  description: siteDescription,
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
+  },
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: '/',
+    siteName: 'ZeroBusy',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
   },
 };
 
