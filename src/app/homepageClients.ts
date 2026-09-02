@@ -65,4 +65,32 @@ export const homepageClients: HomepageClient[] = [
     width: 120,
     height: 60,
   },
+  {
+    href: "https://jelliot.com.au/",
+    src: "/clients/j-elliot.png",
+    alt: "J Elliot",
+    width: 130,
+    height: 61,
+  },
+  {
+    href: "https://www.samanidecorators.in/",
+    src: "/clients/samani-decorators.png",
+    alt: "Samani Decorators",
+    width: 90,
+    height: 84,
+  },
+  {
+    href: "https://kkingsevents.com/",
+    src: "/clients/kkings-events.png",
+    alt: "KKings Events",
+    width: 79,
+    height: 100,
+  },
+  {
+    href: "https://www.therapywithlubna.com/",
+    src: "/clients/lubna-meherally.png",
+    alt: "Lubna Meherally",
+    width: 170,
+    height: 40,
+  },
 ];

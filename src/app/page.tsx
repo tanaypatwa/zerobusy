@@ -87,8 +87,8 @@ const HeroSection = () => {
                         alt={client.alt}
                         width={client.width}
                         height={client.height}
-                        className="object-contain h-8 w-auto"
-                        style={{ maxWidth: '90px' }}
+                        className="object-contain h-9 w-auto"
+                        style={{ maxWidth: '105px' }}
                       />
                     </Link>
                   ))}
@@ -118,7 +118,7 @@ const HeroSection = () => {
                         alt={client.alt}
                         width={client.width}
                         height={client.height}
-                        className="object-contain h-10 w-auto"
+                        className="object-contain h-12 w-auto"
                       />
                       {client.name && (
                         <span className="text-sm font-medium text-gray-600 ml-2 whitespace-nowrap">{client.name}</span>
