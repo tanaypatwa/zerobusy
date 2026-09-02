@@ -73,7 +73,7 @@ const HeroSection = () => {
             
             {/* Mobile Carousel */}
             <div className="w-full mx-auto overflow-hidden relative md:hidden">
-                <div className="flex items-center animate-scroll-mobile">
+                <div className="inline-flex items-center animate-scroll-mobile">
                   {[...homepageClients, ...homepageClients].map((client, i) => (
                     <Link 
                       href={client.href} 
@@ -99,18 +99,7 @@ const HeroSection = () => {
 
             {/* Desktop Carousel */}
             <div className="hidden md:block w-full max-w-4xl mx-auto overflow-hidden relative">
-                <motion.div
-                  className="flex items-center"
-                  animate={{
-                    x: ['0%', '-100%'],
-                  }}
-                  transition={{
-                    ease: 'linear',
-                    duration: 20,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                  }}
-                >
+                <div className="inline-flex items-center animate-scroll-desktop">
                   {[...homepageClients, ...homepageClients].map((client, i) => (
                     <Link href={client.href} key={i} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 flex items-center justify-center p-4 mx-4" style={{ minWidth: '160px' }}>
                       <Image
@@ -125,7 +114,7 @@ const HeroSection = () => {
                       )}
                     </Link>
                   ))}
-                </motion.div>
+                </div>
                 <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-gray-50 to-transparent pointer-events-none"></div>
                 <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
             </div>
